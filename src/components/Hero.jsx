@@ -6,7 +6,7 @@ const Hero = () => {
         <img src={HeroImage} alt="img" 
         className='mx-auto mb-8 w-48 h-48 rounded-full object-cover transform transition-transform duration-300 hover:scale-105' />
         <h1 className='text-4xl font-bold'>I'm {""}
-            <span>Abdullah Khamoor</span>
+            <span className='text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500'>Abdullah Khamoor</span>
             ,Full-Stack Developer
         </h1>
         <p className='mt-4 text-lg text-gray-300'>
