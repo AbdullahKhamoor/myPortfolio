@@ -28,11 +28,12 @@ const [isOpen, setIsOpen] = useState(false);
             transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full '>Connect Me</button>
         </div>
         {/* //Responsive */}
-        <div  className={ ` ${isOpen ? 'block' : 'hidden' }  fixed z-10 md:hidden bg-white text-black inset-0 p-3 overflow-hidden `}  >
+        <div  className={ ` ${isOpen ? 'block' : 'hidden' }  fixed z-10 md:hidden bg-black text-aliceblue inset-0 p-3 
+        overflow-hidden   origin-top`}>
              
                 <h1>PORTFOLIO</h1>
                 <button onClick={()=> setIsOpen(!isOpen)}  className='md:hidden p-2' ><ImCross className='md:hidden w-7 h-7 absolute top-2.5 right-6' /></button>
-                <div className=''>
+                <div className='w-full'>
                 <div className=' flex flex-col items-center gap-8  md:hidden ' >
                 <a href="#home" className=' hover:text-gray-400   border-b-2'><button onClick={()=> setIsOpen(!isOpen)}>Home</button></a>
                 <a href="#about" className={ ` hover:text-gray-400 border-b-2 md:hidden `}><button onClick={()=> setIsOpen(!isOpen)}>About</button>  </a>
