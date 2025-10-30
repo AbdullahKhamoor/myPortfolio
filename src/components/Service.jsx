@@ -1,6 +1,8 @@
 import React from 'react'
+import { useEffect, useState } from 'react';
 import AOS1 from "aos";
 import 'aos/dist/aos.css';
+
 
 const services = [
   {
@@ -35,10 +37,23 @@ const services = [
   },
 ];
 const Service = () => {
-// useEffect(()=>{
-//     AOS1.init({duration: 900})
-//   },[])
-AOS1.init({duration:900});
+  const [aosAnimation, setAosAnimation] = useState('fade-up');
+useEffect(()=>{
+const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setAosAnimation('fade-up'); // Mobile
+      } else {
+        setAosAnimation('zoom-in'); // Desktop
+      }
+    };
+     // Initial check and event listener
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    AOS1.init({duration: 900})
+    return () => window.removeEventListener('resize', handleResize);
+
+  },[])
+// AOS1.init({duration:900});
 
   return (
      <div className='bg-black text-white py-20' id="service" >
@@ -49,7 +64,7 @@ AOS1.init({duration:900});
               <div 
               key={service.id}
               className='bg-gray-800 px-6 pb-6 rounded-lg hover:shadow-lg transform 
-              transition-transform duration-300 hover:scale-105' data-aos = "fade-right"> 
+              transition-transform duration-300 hover:scale-105' data-aos = {aosAnimation}> 
               
               <div className='text-right text-2xl font-bold text-transparent bg-clip-text 
               bg-gradient-to-r from-green-600 to-blue-400'

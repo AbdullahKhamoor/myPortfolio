@@ -1,6 +1,7 @@
 import React from 'react'
 import employeeMSImage from "../assets/employee-ms.png";
 import bookMSImage from "../assets/admin-dashboard.png";
+import { useEffect, useState } from 'react';
 import AOS2 from "aos";
 import 'aos/dist/aos.css';
 
@@ -30,8 +31,24 @@ const projects = [
   },
 ];
 const Project = () => {
+ const [aosAnimation, setAosAnimation] = useState('fade-up');
+useEffect(()=>{
+const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setAosAnimation('fade-up'); // Mobile
+      } else {
+        setAosAnimation('zoom-in'); // Desktop
+      }
+    };
+     // Initial check and event listener
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    AOS2.init({duration: 900})
+    return () => window.removeEventListener('resize', handleResize);
 
-AOS2.init({duration:900});
+  },[])
+
+// AOS2.init({duration:900});
 
   return (
     <div className='bg-black text-white py-20' id="project" >
@@ -40,7 +57,7 @@ AOS2.init({duration:900});
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
                 {projects.map((project)=> (
                     <div key={project.id} className="bg-gray-800 p-6 rounded-lg hover:shadow-lg 
-            transform transition-transform duration-300 hover:scale-105" data-aos = "fade-right" >
+            transform transition-transform duration-300 hover:scale-105" data-aos = {aosAnimation} >
                     <img src={project.image} alt="" className='rounded-lg mb-4 
               w-full h-48 object-cover' />    
                     <h3 className="text-2xl font-bold mb-2">{project.name}</h3>
