@@ -1,6 +1,7 @@
 import React from 'react'
-import employeeMSImage from "../assets/employee-ms.png";
-import bookMSImage from "../assets/admin-dashboard.png";
+import employeeMSImage from "../assets/EMS.png";
+import bookMSImage from "../assets/Quiz.png";
+import userList from "../assets/CrudOperation.png"
 import { useEffect, useState } from 'react';
 import AOS2 from "aos";
 import 'aos/dist/aos.css';
@@ -13,21 +14,21 @@ const projects = [
     name: "Employee MS",
     technologies: "MERN Stack",
     image: employeeMSImage,
-    github: "https://github.com/YouafKhan1",
+    github: "https://ems-frontend-three-blond.vercel.app/",
   },
   {
     id: 2,
-    name: "Blog App",
+    name: "Quiz App",
     technologies: "MERN Stack",
     image: bookMSImage,
-    github: "https://github.com/YouafKhan1",
+    github: "https://abdullahkhamoor.github.io/Quiz-App/",
   },
   {
     id: 3,
-    name: "Book MS",
+    name: "User list crud operations",
     technologies: "MERN Stack",
-    image: employeeMSImage,
-    github: "https://github.com/YouafKhan1",
+    image: userList,
+    github: "https://crud-project-c8b4.vercel.app/",
   },
 ];
 const Project = () => {
@@ -62,7 +63,7 @@ const Project = () => {
               w-full h-48 object-cover' />
               <h3 className="text-2xl font-bold mb-2">{project.name}</h3>
               <p className="text-gray-400 mb-4">{project.technologies}</p>
-              <a href="/" className='inline-block bg-gradient-to-r
+              <a href={project.github} className='inline-block bg-gradient-to-r
                     from-green-400 to-blue-500 text-white px-4 py-2 rounded-full' target='_blank'>GitHub</a>
             </div>
           ))}
