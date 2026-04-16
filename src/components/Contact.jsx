@@ -3,6 +3,7 @@ import { FaEnvelope, FaMapMarkedAlt, FaPhone } from 'react-icons/fa'
 import { useEffect, useState } from 'react';
 import AOS3 from "aos";
 import 'aos/dist/aos.css';
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
 
@@ -12,7 +13,7 @@ const Contact = () => {
       if (window.innerWidth < 769) {
         setAosAnimation('fade-right'); // Mobile
       } else {
-        setAosAnimation('fade-left'); // Desktop
+        setAosAnimation('fade-up'); // Desktop
       }
     };
     // Initial check and event listener
@@ -23,6 +24,23 @@ const Contact = () => {
 
   }, [])
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_18it9j9",
+      "template_1opkdkk",
+      e.target,
+      "sAyNWP0sSyEeKCuoK"
+    )
+      .then(() => {
+        alert("Message sent Successfully");
+        e.target.reset();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   // AOS3.init({duration:900});
 
@@ -54,22 +72,28 @@ const Contact = () => {
           </div>
 
           <div data-aos={aosAnimation} className='flex-1 w-full' >
-            <form className='space-y-4' >
+            <form onSubmit={sendEmail} className='space-y-4' >
               <div >
                 <label htmlFor="name">Your Name</label>
                 <input type="text"
+                  name="user_name"
+                  required
                   className='w-full p-2 rounded bg-gray-800 border-gray-600 focus:outline-none focus:border-green-400'
                   placeholder='Enter Your Name' />
               </div>
               <div>
                 <label htmlFor="name" className='block mb-2'>Email</label>
-                <input type="text"
+                <input type="email"
+                  required
+                  name="user_email"
                   className='w-full p-2 rounded bg-gray-800 border-gray-600 focus:outline-none focus:border-green-400'
                   placeholder='Enter Your Email' />
               </div>
               <div>
                 <label htmlFor="email" className='block mb-2'>Message</label>
                 <textarea type="text"
+                  name="message"
+                  required
                   className='w-full p-2 rounded bg-gray-800 border-gray-600 focus:outline-none focus:border-green-400'
                   rows="5"
                   placeholder='Enter Your Message' />
