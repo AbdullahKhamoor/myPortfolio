@@ -41,7 +41,7 @@ const Navbar = () => {
             transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full '>Connect Me</button>
       </div>
 
-      {/* //Responsive */}
+      {/* //? ****    Responsive *** */}
 
       <div className={` ${isOpen ? 'scale-y-100' : 'scale-y-0'}  fixed z-10 md:hidden bg-black text-aliceblue inset-0 p-3 
         overflow-hidden   origin-top transition-transform duration-500 `}>
