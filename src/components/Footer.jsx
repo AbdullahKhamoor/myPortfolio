@@ -13,7 +13,7 @@ const Footer = () => {
             </p>
           </div>
           <div className='flex-1 w-full'>
-            <form className='flex items-center justify-center'>
+            {/* <form className='flex items-center justify-center'>
               <input
                 type="email"
                 placeholder='Your email'
@@ -27,7 +27,7 @@ const Footer = () => {
               >
                 Subscribe
               </button>
-            </form>
+            </form> */}
           </div>
         </div>
 
@@ -39,24 +39,24 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} Abdullah. All rights reserved.
           </p>
           <div className="flex space-x-4 my-4 md:my-0">
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a href="#" className="text-gray-400 transition-transform duration-150 hover:scale-150 hover:text-white">
               <FaFacebook />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a href="#" className="text-gray-400 transition-transform duration-150 hover:scale-150 hover:text-white">
               <FaTwitter />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a href="#" className="text-gray-400 transform transition-transform duration-150 hover:text-white hover:scale-150">
               <FaLinkedin />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a href="#" className="text-gray-400 transition-transform duration-200 hover:scale-150 hover:text-white">
               <FaGithub />
             </a>
           </div>
           <div className="flex space-x-4">
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a href="#" className="text-gray-400  hover:text-white">
               Privacy
             </a>
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a href="#" className="text-gray-400  hover:text-white">
               Terms of Service
             </a>
           </div>
