@@ -45,10 +45,10 @@ const Footer = () => {
             <a href="#" className="text-gray-400 transition-transform duration-150 hover:scale-150 hover:text-white">
               <FaTwitter />
             </a>
-            <a href="#" className="text-gray-400 transform transition-transform duration-150 hover:text-white hover:scale-150">
+            <a href="https://www.linkedin.com/in/abdullah-khamoor/" target="_blank" className="text-gray-400 transform transition-transform duration-150 hover:text-white hover:scale-150">
               <FaLinkedin />
             </a>
-            <a href="#" className="text-gray-400 transition-transform duration-200 hover:scale-150 hover:text-white">
+            <a href="https://github.com/AbdullahKhamoor" target="_blank" className="text-gray-400 transition-transform duration-200 hover:scale-150 hover:text-white">
               <FaGithub />
             </a>
           </div>

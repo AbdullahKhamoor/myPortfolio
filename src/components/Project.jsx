@@ -30,7 +30,7 @@ const projects = [
     id: 3,
     name: "User list crud operations",
     technologies: "MERN Stack",
-    description: "Developed a full-stack User List application with complete CRUD (Create, Read, Update, Delete) functionality. The project allows users to be added, updated, and deleted, with all data being securely stored in a MongoDB database. The application ensures real-time data management between the frontend and backend, providing a smooth and responsive user experience. It demonstrates effective handling of REST APIs and database operations using a full-stack architecture.",
+    description: "Developed a full-stack User List application with complete CRUD (Create, Read, Update, Delete) functionality. The project enables users to add, update, view, and delete records, with all data securely stored in a MongoDB database. Redux Toolkit was used for efficient state management, ensuring seamless data flow and improved application performance. The application integrates REST APIs for real-time communication between the frontend and backend, providing a smooth and responsive user experience. It demonstrates strong proficiency in full-stack development, API integration, database operations, and modern state management techniques.",
     image: userList,
     github: "https://crud-project-c8b4.vercel.app/",
   },
