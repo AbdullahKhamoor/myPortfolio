@@ -65,7 +65,7 @@ const Contact = () => {
             </div>
             <div className='mb-4'>
               <FaMapMarkedAlt className='inline-block text-green-400 mr-2'></FaMapMarkedAlt>
-              <a href="mailto:youremail@example.com" className='hover:underline'>
+              <a href="#" className='hover:underline'>
                 youremail@example.com
               </a>
             </div>
@@ -101,7 +101,7 @@ const Contact = () => {
                   rows="5"
                   placeholder='Enter Your Message' />
               </div>
-              <button className='bg-gradient-to-r from-green-400 to-blue-500 text-white  md:inline
+              <button className='cursor-pointer bg-gradient-to-r from-green-400 to-blue-500 text-white  md:inline
                        transform transition-transform duration-300 hover:scale-105 px-8 py-2 rounded-full hover:bg-blue-600  active:opacity-80'>Send </button>
             </form>
           </div>

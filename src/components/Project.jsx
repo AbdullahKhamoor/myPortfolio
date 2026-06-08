@@ -13,6 +13,8 @@ const projects = [
     id: 1,
     name: "Employee MS",
     technologies: "MERN Stack",
+    description:
+      "Built a full-stack Employee Management System using React.js, Node.js, Express.js, and MongoDB. The application includes role-based authenticationwith separate Admin and Employee dashboards. Admins can manage employee records, departments, salaries, and leave requests, as well as add new employees and update their information. Employees can securely log in, view their profile details, apply for leave, and track their salary history. The system improves HR management by automating employee-related processes and providing a user-friendly interface for both administrators and employees",
     image: employeeMSImage,
     github: "https://ems-frontend-three-blond.vercel.app/",
   },
@@ -20,6 +22,7 @@ const projects = [
     id: 2,
     name: "Quiz App",
     technologies: "MERN Stack",
+    description: "Built an interactive quiz application using React.js that displays multiple-choice questions, tracks user score, and provides instant feedback for correct and incorrect answers. The app includes question navigation, answer locking to prevent multiple selections, and a final result screen with score display and reset functionality. It demonstrates efficient use of React hooks like useState and useRef for state and DOM management.",
     image: bookMSImage,
     github: "https://abdullahkhamoor.github.io/Quiz-App/",
   },
@@ -27,12 +30,22 @@ const projects = [
     id: 3,
     name: "User list crud operations",
     technologies: "MERN Stack",
+    description: "Developed a full-stack User List application with complete CRUD (Create, Read, Update, Delete) functionality. The project allows users to be added, updated, and deleted, with all data being securely stored in a MongoDB database. The application ensures real-time data management between the frontend and backend, providing a smooth and responsive user experience. It demonstrates effective handling of REST APIs and database operations using a full-stack architecture.",
     image: userList,
     github: "https://crud-project-c8b4.vercel.app/",
   },
 ];
 const Project = () => {
   const [aosAnimation, setAosAnimation] = useState('fade-up');
+  const [expanded, setExpanded] = useState({});
+
+  const toggleReadMore = (id) => {
+    setExpanded((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
@@ -55,13 +68,28 @@ const Project = () => {
     <div className='bg-black text-white py-20' id="project" >
       <div className='container mx-auto px-8 md:px-16 lg:px-24'>
         <h2 className='text-4xl font-bold text-center mb-12'>My Projects</h2>
-        <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-8  '>
+        <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-8 items-start '>
           {projects.map((project) => (
             <div key={project.id} className="bg-gray-800 p-6 rounded-lg hover:shadow-lg 
             transform transition-transform duration-500 hover:scale-105 hover:opacity-10" data-aos={aosAnimation} >
               <img src={project.image} alt="" className='rounded-lg mb-4 
               w-full h-48 object-cover' />
-              <h3 className="text-2xl font-bold mb-2 hover:opacity-10">{project.name}</h3>
+              <h3 className="text-2xl font-bold  hover:opacity-10">{project.name}</h3>
+
+              <p className='text-gray-300 transition-all duration-500 ease-in-out'>
+                {expanded[project.id]
+                  ? project.description
+                  : `${(project.description || "").slice(0, 80)}...`}
+              </p>
+
+
+              <button
+                onClick={() => toggleReadMore(project.id)}
+                className="cursor-pointer  text-green-400 hover:text-blue-500 mt-2"
+              >
+                {expanded[project.id] ? "Read Less" : "Read More"}
+              </button>
+
               <p className="text-gray-400 mb-4">{project.technologies}</p>
               <a href={project.github} className='inline-block bg-gradient-to-r
                     from-green-400 to-blue-500 text-white px-4 py-2 rounded-full hover:opacity-80

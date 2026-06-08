@@ -22,11 +22,10 @@ const Navbar = () => {
           <a href="#about" className='hover:text-gray-400'>About</a>
           <a href="#service" className='hover:text-gray-400'>Services</a>
           <a href="#project" className='hover:text-gray-400'>Projects</a>
-          {/* <a href="#contact" className='hover:text-gray-400'>Contact</a> */}
         </div>
         <button onClick={() => setIsOpen(!isOpen)}><GiHamburgerMenu className='md:hidden w-7 h-7 absolute top-2.5 right-6' /></button>
         <a href="#contact">
-          <button className='bg-gradient-to-r from-green-400 to-blue-500 text-white hidden md:inline
+          <button className='cursor-pointer bg-gradient-to-r from-green-400 to-blue-500 text-white hidden md:inline
             transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full '>Contact me</button></a>
       </div>
 
