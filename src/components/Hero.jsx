@@ -1,10 +1,11 @@
 import React from 'react'
-import ProfileImage from "../assets/profileImg.jpeg"
+// import ProfileImage from "../assets/profileImg.jpeg"
+import profileimg from "../assets/portfolio img.png"
 import Typewriter from "typewriter-effect"
 const Hero = () => {
   return (
     <div className='bg-[url(assets/back.gif)]  text-white text-center py-16'>
-      <img src={ProfileImage} alt="img"
+      <img src={profileimg} alt="img"
         className='mx-auto mb-8 w-48 h-48 rounded-full object-cover transform transition-transform duration-300 hover:scale-105' />
       <h1 className='text-4xl font-bold'>
         <Typewriter
