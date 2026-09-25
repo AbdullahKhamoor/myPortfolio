@@ -65,18 +65,16 @@ const Project = () => {
   // AOS2.init({duration:900});
 
   return (
-    <div className='bg-black text-white py-20' id="project" >
+    <div className='section-surface text-white py-20' id="project" >
       <div className='container mx-auto px-8 md:px-16 lg:px-24'>
-        <h2 className='text-4xl font-bold text-center mb-12'>My Projects</h2>
+        <h2 className='font-display text-4xl font-semibold text-center mb-12 tracking-tight '>My Projects</h2>
         <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-8 items-start '>
           {projects.map((project) => (
-            <div key={project.id} className="bg-gray-800 p-6 rounded-lg hover:shadow-lg 
-            transform transition-transform duration-500 hover:scale-105 hover:opacity-10" data-aos={aosAnimation} >
-              <img src={project.image} alt="" className='rounded-lg mb-4 
-              w-full h-48 object-cover' />
-              <h3 className="text-2xl font-bold  hover:opacity-10">{project.name}</h3>
+            <div key={project.id} className="glass-panel p-6 rounded-2xl hover:shadow-xl hover:shadow-black/30 hover:border-indigo-400/30 transform transition-all duration-500 hover:scale-105" data-aos={aosAnimation} >
+              <img src={project.image} alt="" className='overflow-hidden rounded-xl mb-4) ke andar, image: w-full h-48 object-cover transform transition-transform duration-500 hover:scale-110' />
+              <h3 className="font-display text-2xl font-semibold tracking-tight">{project.name}</h3>
 
-              <p className='text-gray-300 transition-all duration-500 ease-in-out'>
+              <p className='text-gray-400 transition-all duration-500 ease-in-out'>
                 {expanded[project.id]
                   ? project.description
                   : `${(project.description || "").slice(0, 80)}...`}
@@ -85,15 +83,13 @@ const Project = () => {
 
               <button
                 onClick={() => toggleReadMore(project.id)}
-                className="cursor-pointer  text-green-400 hover:text-blue-500 mt-2"
+                className="cursor-pointer text-cyan-400 hover:text-indigo-400 mt-2 transition-colors duration-200"
               >
                 {expanded[project.id] ? "Read Less" : "Read More"}
               </button>
 
-              <p className="text-gray-400 mb-4">{project.technologies}</p>
-              <a href={project.github} className='inline-block bg-gradient-to-r
-                    from-green-400 to-blue-500 text-white px-4 py-2 rounded-full hover:opacity-80
-    active:opacity-50  active:scale-105' target='_blank'>GitHub</a>
+              <p className="text-gray-500 mb-4 text-sm">{project.technologies}</p>
+              <a href={project.github} className='inline-block accent-gradient-bg text-white px-4 py-2 rounded-full hover:shadow-lg hover:shadow-indigo-500/20 active:opacity-80 active:scale-105 transition-all duration-300'>GitHub</a>
             </div>
           ))}
         </div>

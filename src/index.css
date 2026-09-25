@@ -1,6 +1,74 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  scrollbar-color: #334155 transparent;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #05070d;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #334155;
+  border-radius: 9999px;
+}
+
+/* Shared dark section background: subtle grid + soft radial glows */
+.section-surface {
+  position: relative;
+  background-color: #05070d;
+  background-image:
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+    linear-gradient(to right, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.section-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(600px circle at 15% 0%, rgba(99, 102, 241, 0.14), transparent 60%),
+    radial-gradient(500px circle at 85% 100%, rgba(34, 211, 238, 0.10), transparent 60%);
+}
+
+.section-surface > * {
+  position: relative;
+}
+
+.glass-panel {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.accent-gradient-text {
+  background-image: linear-gradient(to right, #818cf8, #22d3ee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.accent-gradient-bg {
+  background-image: linear-gradient(to right, #6366f1, #06b6d4);
 }
