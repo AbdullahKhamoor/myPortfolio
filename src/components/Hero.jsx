@@ -1,5 +1,4 @@
 import React from 'react'
-// import ProfileImage from "../assets/profileImg.jpeg"
 import profileimg from "../assets/portfolio img.png"
 import Typewriter from "typewriter-effect"
 const Hero = () => {
